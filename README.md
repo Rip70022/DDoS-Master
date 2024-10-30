@@ -22,12 +22,15 @@
    ```bash
    cd DDoS-Master
    ```
-   
-2. Run the script:
+2. Install dependencies:
+   ```bash
+   pip3 install termcolor
+   ```
+4. Run the script:
    ```bash
    python3 DDoS_Master.py
    ```
-3. Follow the prompts to enter the target IP, port, and attack duration.
+5. Follow the prompts to enter the target IP, port, and attack duration.
 
 # Warning:
 LEGAL NOTICE:
