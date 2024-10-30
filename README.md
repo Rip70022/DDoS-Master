@@ -12,7 +12,9 @@
 - Option to set attack `duration`.
 
 ## Requirements:
-- `Python 3`
+- `Linux`
+- `Python`
+- `termcolor`
 
 ## Usage:
 1. Clone the repository:
