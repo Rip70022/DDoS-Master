@@ -24,11 +24,20 @@
    ```
 2. Install dependencies:
    ```bash
-   pip3 install termcolor
+   sudo apt install python3-venv
+   ```
+   ```bash
+   python3 -m venv venv
+   ```
+   ```bash
+   source venv/bin/activate
+   ```
+   ```bash
+   pip install termcolor
    ```
 4. Run the script:
    ```bash
-   python3 DDoS_Master.py
+   python DDoS_Master.py
    ```
 5. Follow the prompts to enter the target IP, port, and attack duration.
 
