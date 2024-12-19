@@ -1,5 +1,5 @@
 # DDoS-Master
-
+![DDoS Master](https://github.com/Rip70022/DDoS-Master/blob/main/DDOS-MASTER.webp?raw=true)
 ## Author:
 `Shadow_Sadist/Rip70022`
 
