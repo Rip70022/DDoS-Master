@@ -1,3 +1,6 @@
+#MORE SCRIPTS >> https://github.com/Rip70022
+
+
 from termcolor import colored
 import sys
 import os
